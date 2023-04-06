@@ -1,0 +1,30 @@
+POD
+kubectl run redis --image=redis -n=finance 
+kubectl run redus --image=redis:alpine --lables="tier=db"
+kubectl run ngix --image=nginx --port=8080
+kubectl run ngix --image=nginx --port=8080 --expose=true 
+
+SERVICE
+kubectl get svc --namespace=bank
+kubectl get svc -n=bank
+
+NAMESPACE
+kubectl create namespace dev-ns
+kubectl get namespaces
+kubectl get ns 
+kubectl get pods --namespace=bank
+kubectl get pods -n=bank
+kubectl get pods --all-namespaces 
+kubectl get pods -A
+kubectl run redis --image=redis -n=finance 
+
+EXPOSE
+kubectl expose --help 
+kubectl expose pod redis --port 4323 --name redis-service  
+
+DEPLOYMENT
+kubectl get deployments
+kubectl get deploy
+kubectl get deploy -n dev-ns	
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
+kubectl create deployment redis-deply --imae=redis --replicas=2 -n dev-ns
