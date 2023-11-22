@@ -4,6 +4,10 @@ kubectl run redus --image=redis:alpine --lables="tier=db"
 kubectl run ngix --image=nginx --port=8080
 kubectl run ngix --image=nginx --port=8080 --expose=true 
 
+POD COUNT INCREASE DECREASE 
+oc scale --replicas=0 $(oc get dc -o name | xargs) -n retailapplicationservices-pt
+oc scale dc/nfscallbacknomineesdetails --replicas=1
+
 SERVICE
 kubectl get svc --namespace=bank
 kubectl get svc -n=bank
