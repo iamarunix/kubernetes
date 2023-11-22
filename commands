@@ -4,10 +4,6 @@ kubectl run redus --image=redis:alpine --lables="tier=db"
 kubectl run ngix --image=nginx --port=8080
 kubectl run ngix --image=nginx --port=8080 --expose=true 
 
-POD COUNT INCREASE DECREASE 
-oc scale --replicas=0 $(oc get dc -o name | xargs) -n retailapplicationservices-pt
-oc scale dc/nfscallbacknomineesdetails --replicas=1
-
 SERVICE
 kubectl get svc --namespace=bank
 kubectl get svc -n=bank
@@ -32,3 +28,5 @@ kubectl get deploy
 kubectl get deploy -n dev-ns	
 kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
 kubectl create deployment redis-deply --imae=redis --replicas=2 -n dev-ns
+kubectl scale --replicas=0 $(oc get dc -o name | xargs) -n retailapplicationservices-pt
+kubectl scale dc/nfscallbacknomineesdetails --replicas=1
