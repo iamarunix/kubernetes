@@ -99,10 +99,11 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm search repo bitnami
 helm repo update    
 helm install mydb bitnami/mysql --generate-name #install mysql chart
-
+helm install --ns teamtwo mydb bitnami/mysql
 helm search repo mysql
 helm remove repo mysql 
 helm repo list 
+
 
 
 
