@@ -1,4 +1,4 @@
-What is Helm?
+-- What is Helm?
 
 It is like a package manager EXE in Windows and YUM in Linux 
 It is a package manager in Linux that container lots of YAML files 
@@ -13,9 +13,6 @@ While compared to basic model of deployment in Kubernetes, Helm is easy and fast
 2.1 Download eksctl
 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-
-
-
 
 2.2 Move eksctl to /usr/local/bin or /home/cloudshell-user/bin folder
 
@@ -33,7 +30,6 @@ This key is used to connect to EC2 nodes created by EKS cluster.
 
 aws ec2 create-key-pair --key-name eksKeyPair --query 'KeyMaterial' --output text > eksKeyPair.pem
 
-
 Step 4 : Create EKS Cluster
 
 Create cluster with the default settings. This may take around 15–20 minutes so take a cup of coffee !
@@ -45,12 +41,9 @@ eksctl create cluster \
 --ssh-access \
 --ssh-public-key eksKeyPair
 
-
-
 5.1 Download kubectl
 
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
-
 
 5.2 Apply execute permission
 
