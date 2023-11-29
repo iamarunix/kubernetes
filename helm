@@ -9,7 +9,6 @@ In Kuberenetes, it used to deploy a service/application
 Why Helm?
 While compared to basic model of deployment in Kubernetes, Helm is easy and faster in deployments.
 
-
 2.1 Download eksctl
 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
