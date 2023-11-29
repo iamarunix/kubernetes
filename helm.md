@@ -1,12 +1,13 @@
-- What is Helm?
+< What is Helm? /b>
 
 It is like a package manager EXE in Windows and YUM in Linux 
 It is a package manager in Linux that container lots of YAML files 
 
--Where Helm is used?
+# Where Helm is used?
+
 In Kuberenetes, it used to deploy a service/application
 
--Why Helm?
+**- Why Helm?**
 While compared to basic model of deployment in Kubernetes, Helm is easy and faster in deployments.
 
 2.1 Download eksctl
@@ -85,16 +86,17 @@ eksctl delete cluster --name test-cluster
 
 https://helm.sh/docs/intro/quickstart/#install-an-example-chart
 
+# Commands
 
-helm list
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm search repo bitnami
-helm repo update    
-helm install mydb bitnami/mysql --generate-name #install mysql chart
-helm install --ns teamtwo mydb bitnami/mysql
-helm search repo mysql
-helm remove repo mysql 
-helm repo list 
+\# helm list
+\# helm repo add bitnami https://charts.bitnami.com/bitnami
+\# helm search repo bitnami
+\# helm repo update    
+\# helm install mydb bitnami/mysql --generate-name #install mysql chart
+\# helm install --ns teamtwo mydb bitnami/mysql
+\# helm search repo mysql
+\# helm remove repo mysql 
+\# helm repo list 
 
 
 
