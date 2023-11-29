@@ -1,12 +1,12 @@
--- What is Helm?
+- What is Helm?
 
 It is like a package manager EXE in Windows and YUM in Linux 
 It is a package manager in Linux that container lots of YAML files 
 
-Where Helm is used?
+-Where Helm is used?
 In Kuberenetes, it used to deploy a service/application
 
-Why Helm?
+-Why Helm?
 While compared to basic model of deployment in Kubernetes, Helm is easy and faster in deployments.
 
 2.1 Download eksctl
