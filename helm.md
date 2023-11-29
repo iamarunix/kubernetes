@@ -88,15 +88,15 @@ https://helm.sh/docs/intro/quickstart/#install-an-example-chart
 
 # Commands
 
-\# helm list
-\# helm repo add bitnami https://charts.bitnami.com/bitnami
-\# helm search repo bitnami
-\# helm repo update    
-\# helm install mydb bitnami/mysql --generate-name #install mysql chart
-\# helm install --ns teamtwo mydb bitnami/mysql
-\# helm search repo mysql
-\# helm remove repo mysql 
-\# helm repo list 
+\# helm list  <br />
+\# helm repo add bitnami https://charts.bitnami.com/bitnami  <br />
+\# helm search repo bitnami  <br />
+\# helm repo update      <br />
+\# helm install mydb bitnami/mysql --generate-name #install mysql chart  <br />
+\# helm install --ns teamtwo mydb bitnami/mysql  <br />
+\# helm search repo mysql  <br />
+\# helm remove repo mysql   <br />
+\# helm repo list  <br />
 
 
 
