@@ -3,6 +3,16 @@
 It is like a package manager EXE in Windows and YUM in Linux 
 It is a package manager in Linux that container lots of YAML files 
 
+
+
+
+  31  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+   32  chmod 700 get_helm.sh
+   33  ./get_helm.sh
+   36  helm version 
+
+
+
 # Where Helm is used?
 
 In Kuberenetes, it used to deploy a service/application
