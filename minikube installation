@@ -1,5 +1,5 @@
 Minikube installation in Aws Ec2 
-
+ #!/bin/bash
 # Update Yum
 sudo yum update -y
 
