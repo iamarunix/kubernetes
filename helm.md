@@ -34,6 +34,8 @@ https://helm.sh/docs/intro/quickstart/#install-an-example-chart
 \# helm remove repo mysql   <br />
 \# helm repo list  <br />
 
+PS1='\[\033[0;32m\]\u@\h:\[\033[0;34m\]\w\[\033[0m\]\$ '
+
 
 
 
