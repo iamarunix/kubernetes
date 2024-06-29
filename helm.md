@@ -14,10 +14,6 @@ It is a package manager in Linux that container lots of YAML files
     change SVC to nodeport in values.yaml
     hellom install helloworld 
 
-
-
-
-
 ====
 
 https://helm.sh/docs/intro/quickstart/#install-an-example-chart
@@ -33,6 +29,13 @@ https://helm.sh/docs/intro/quickstart/#install-an-example-chart
 \# helm search repo mysql  <br />
 \# helm remove repo mysql   <br />
 \# helm repo list  <br />
+
+## Part 3 - helm repo 
+
+- helm repo list 
+- helm repo add bitnami https://charts.bitnami.com/bitnami
+- helm search repo 
+- helm repo update 
 
 PS1='\[\033[0;32m\]\u@\h:\[\033[0;34m\]\w\[\033[0m\]\$ '
 
