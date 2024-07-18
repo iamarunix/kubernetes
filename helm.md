@@ -4,6 +4,12 @@
 
 https://helm.sh/
 
+## Helm installation (Linux)
+
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod 700 get_helm.sh
+$ ./get_helm.sh
+
 ## Part 1 - helm intro 
 
 - why helm
@@ -18,6 +24,8 @@ https://helm.sh/
 - helm create hotel 
 - helm install hotel-hilton hotel
 - helm install --ns hotel-hilton hotel
+- helm install jen bitnami/jenkins 
+- helm repo update 
 - helm upgrade hotel-hilton 
 - kubectl get pods
 - kubectl get service
