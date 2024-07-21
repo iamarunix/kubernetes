@@ -33,3 +33,4 @@ kubectl scale dc/nfscallbacknomineesdetails --replicas=1
 
 
 aws eks update-kubeconfig --region us-east-1 --name c1 
+ AWS_SDK_LOAD_CONFIG=1
