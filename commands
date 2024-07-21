@@ -30,3 +30,6 @@ kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
 kubectl create deployment redis-deply --imae=redis --replicas=2 -n dev-ns
 kubectl scale --replicas=0 $(oc get dc -o name | xargs) -n retailapplicationservices-pt
 kubectl scale dc/nfscallbacknomineesdetails --replicas=1
+
+
+aws eks update-kubeconfig --region us-east-1 --name c1 
