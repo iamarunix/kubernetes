@@ -25,6 +25,7 @@ $ ./get_helm.sh
 - helm install hotel-hilton hotel
 - helm install --ns hotel-hilton hotel
 - helm install jen bitnami/jenkins 
+- helm pull bitnami/jenkins 
 - helm repo update 
 - helm upgrade hotel-hilton 
 - kubectl get pods
