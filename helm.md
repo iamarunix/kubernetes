@@ -36,9 +36,10 @@ $ ./get_helm.sh
 
 - helm repo list 
 - helm repo add bitnami https://charts.bitnami.com/bitnami
-- helm search repo
-- helm search repo mysql
-- helm repo update 
+- helm search repo # to check all available charts 
+- helm search repo mysql # to check particular chart 
+- helm repo update
+- 
 
 
 
