@@ -26,11 +26,11 @@ $ ./get_helm.sh
 - helm install --ns hotel-hilton hotel
 - helm install jen bitnami/jenkins 
 - helm pull bitnami/jenkins 
-- helm repo update 
+- helm rollback jen 43
+- helm repo update
 - helm upgrade hotel-hilton 
-- kubectl get pods
-- kubectl get service
-- kubectl exec <pod-name> -it --/bin/sh
+- helm lint jen
+- helm install webserver --debug --dry-run nginx
 
 ## Part 3 - helm repo 
 
