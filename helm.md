@@ -39,3 +39,4 @@ https://helm.sh/
 - helm search repo # to check all available charts 
 - helm search repo mysql # to check particular chart 
 - helm repo update
+- helm repo remove bitnami
