@@ -25,12 +25,12 @@ https://helm.sh/
 - helm install hotel-hilton hotel
 - helm install --ns hotel-hilton hotel
 - helm install jen bitnami/jenkins 
+- helm install webserver --debug --dry-run nginx
 - helm pull bitnami/jenkins 
 - helm rollback jen 43
-- helm repo update
 - helm upgrade hotel-hilton 
 - helm lint jen
-- helm install webserver --debug --dry-run nginx
+
 
 ## Part 3 - helm repo 
 
