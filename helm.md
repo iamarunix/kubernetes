@@ -28,9 +28,9 @@ https://helm.sh/
 - helm install webserver --debug --dry-run nginx
 - helm pull bitnami/jenkins 
 - helm rollback jen 43
-- helm upgrade hotel-hilton 
+- helm upgrade fox 
 - helm lint jen
-
+- helm uninstall fox 
 
 ## Part 3 - helm repo 
 
