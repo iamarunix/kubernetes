@@ -34,3 +34,25 @@ kubectl scale dc/nfscallbacknomineesdetails --replicas=1
 EKS
 aws eks update-kubeconfig --region us-east-1 --name c1 
 AWS_SDK_LOAD_CONFIG=1
+==============================================
+Minikube Installation on AWSLinux2 Instance:
+==============================================
+1 Install Docker : 
+
+yum install docker -y
+systemctl start docker
+systemctl status docker
+ chmod 666 /var/run/docker.sock
+usermod -aG docker $USER && newgrp docker
+
+2 Install Kubectl :
+ 
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
+
+3 Install Minikube :
+
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+ 
