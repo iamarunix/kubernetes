@@ -1,0 +1,6 @@
+$ docker build -t python-app .
+$ docker images
+$ docker tag python-app arunsre/helm:t-python-app
+$ docker login
+$ docker push arunsre/helm:t-python-app
+$ docker rmi test1:latest
