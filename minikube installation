@@ -31,8 +31,8 @@ sudo mv minikube /usr/local/bin/minikube
 
 # Start minikube
 minikube start
-
 minikube status 
+
 kubectl version
 kubectl get nodes
 kubectl get all 
