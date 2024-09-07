@@ -9,6 +9,7 @@ kubectl get svc --namespace=bank
 kubectl get svc -n=bank
 kubectl expose pod nginx-pod --type=NodePort --port=80 --name=nginx-service
 kubectl expose pod nginx-pod --type=LoadBalancer --port=80 --name=nginx-service-lb
+kubectl expose pod nginx-pod --type=ClusterIP --port=80 --name=nginx-service-lb
 kubectl expose --help 
 kubectl expose pod redis --port 4323 --name redis-service  
 
@@ -37,29 +38,4 @@ SECRET:
 EKS
 aws eks update-kubeconfig --region us-east-1 --name c1 
 AWS_SDK_LOAD_CONFIG=1
-=================================================================
-Minikube Installation on AWSLinux2 Instance with t2.medium type:
-==================================================================
 
-NOTE: Do not perform as root user
-
-1 Install Docker : 
-
-sudo yum install docker -y
-sudo systemctl start docker
-sudo systemctl status docker
-sudo chmod 666 /var/run/docker.sock
-sudo usermod -aG docker $USER && newgrp docker
-
-2 Install Kubectl :
- 
-sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-kubectl version --client
-
-3 Install Minikube :
-
-$ sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
-$ minikube start
-$ minikube status
