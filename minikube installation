@@ -1,12 +1,7 @@
-Minikube installation in Aws Ec2 
- #!/bin/bash
+Minikube installation in AWS EC2 (t2.medium)
+
 # Update Yum
 sudo yum update -y
-
-# Install Apache httpd
-sudo yum install -y httpd 
-sudo systemctl start httpd 
-sudo systemctl enable httpd
 
 # Install git
 sudo yum install git -y
@@ -33,16 +28,9 @@ sudo mv minikube /usr/local/bin/minikube
 minikube start
 minikube status 
 
+# Verify k8s parameters
 kubectl version
 kubectl get nodes
 kubectl get all 
 kubectl get all -A 
-
-
-
-
-
-
-
-
 
