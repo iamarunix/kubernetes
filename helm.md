@@ -1,7 +1,8 @@
 # Helm Series
 
-- https://helm.sh/ ( Offical Helm page )
-- https://helm.sh/docs/intro/cheatsheet/ (Helm cheat sheet)
+- Helm Playlist       https://youtube.com/playlist?list=PLo1yH22cI23KhA3wtf03DULo_oLrDzdra&si=9qmTvG9x2wEkr8Ab 
+- Helm official page  https://helm.sh/  
+- Helm cheat sheet    https://helm.sh/docs/intro/cheatsheet/ 
 
 ## Helm installation (Linux)
 
