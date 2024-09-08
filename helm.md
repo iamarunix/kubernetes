@@ -1,8 +1,7 @@
 # Helm Series
 
-## Offical Helm page 
-
-https://helm.sh/
+- https://helm.sh/ ( Offical Helm page )
+- https://helm.sh/docs/intro/cheatsheet/ (Helm cheat sheet)
 
 ## Helm installation (Linux)
 
