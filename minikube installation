@@ -1,4 +1,4 @@
-Minikube installation in AWS EC2 (t2.medium)
+Minikube installation in AWS EC2 (t2.medium, chargeable)
 
 # Update Yum
 sudo yum update -y
