@@ -13,7 +13,7 @@
 - Use Cases
 
 ## Part 2 - Helm installation
-- Provision AWS EC2 - Amazon Linux - t2.large (chargeable) 
+- Provision AWS EC2 - Amazon Linux - t3.medium (chargeable) 
 - Minikube Installation  https://github.com/iamarunix/kubernetes/blob/main/minikube%20installation 
 - $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 - $ chmod 700 get_helm.sh
