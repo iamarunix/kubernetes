@@ -8,11 +8,11 @@ sudo yum install git -y
 
 # Install Docker
 sudo yum install docker -y 
-sudo systemctl docker start 
-sudo systemctl enable docker 
+sudo service docker start 
+sudo service enable docker 
 sudo usermod -a -G docker ec2-user
 sudo chmod 666 /var/run/docker.sock 
-sudo systemctl status docker 
+sudo service status docker 
 
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl 
