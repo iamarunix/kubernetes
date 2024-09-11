@@ -29,6 +29,7 @@ minikube start
 minikube status 
 
 # Verify k8s parameters
+alias k=kubectl
 kubectl version
 kubectl get nodes
 kubectl get all 
