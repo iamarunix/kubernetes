@@ -13,7 +13,7 @@
 - Use Cases
 
 ## Part 2 - Helm installation
-- AWS EC2 - Amazon Linux
+- Provision AWS EC2 - Amazon Linux - t2.large (chargeable) 
 - Minikube Installation  https://github.com/iamarunix/kubernetes/blob/main/minikube%20installation 
 - $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 - $ chmod 700 get_helm.sh
@@ -52,47 +52,33 @@
 - helm upgrade mongodb-1 mongodb
 
 ## Part 6 - Create your own helm chart - Python App
-### script.py > dockerfile > docker image >  push image to docker hub > pull docker image into helm chart  
+- The flow ( script.py > dockerfile > docker image >  push image to docker hub > pull docker image into helm chart )
 - python3 --version
 - $ cat script.py
-
-_from datetime import datetime
+```
+from datetime import datetime
 dt = datetime.now()
 print("Current Date and Time is:", dt )
 print("Py app started ...")
 print("Py app terminated")_
-
+```
 - Docker login 
 - cat dockerfile
-
+```
 FROM python:3.8
 WORKDIR /app
 COPY . /app
 CMD ["python3", "script.py"]
-
-3 Build Docker image
-
-# docker build -t python-app .
-
-$ docker tag <image-name> <account-name>/<repo-name>:<tag-name>
-
+```
+$ docker build -t python-app .
 $ docker tag python-app arunsre/helm:t-python-app
-
-$ docker push <account-name>/<repo-name>:<tag-name>
-
 $ docker push arunsre/helm:t-python-app	
 
-7 Verify the image in hub.docker.com
-
-Create own helm chart 
-helm create pega-app
-
-Customize chart values to pull our image from hub.docker.com 
-
-Disable the appversion from Chart.yaml 
-
-Edit the values.yaml 
-
+- Verify the image in hub.docker.com
+- Customize chart values to pull our image from hub.docker.com 
+- Disable the appversion from Chart.yaml 
+- Edit the values.yaml 
+```
 image:
   repository: arunsre/helm
   pullPolicy: IfNotPresent
@@ -107,25 +93,18 @@ image:
   #httpGet:
   # path: /
   #  port: http
+```
+- helm install r-py-app py-app
+- Verify k8s objects 
+- kubectl get all 
+- Verify output 
+- kubectl logs <pod-name
 
-helm install pega-rev-1 pega-app 
+## Part 7 - Create your own helm chart - Nginx App
 
-Verify k8s objects 
-
-kubectl get all 
-
-Verify output 
-
-kubectl logs <pod-name> 
-
-==========================================================================================================================
-
-Part 7 - Create your own helm chart - Nginx App
-
-dockerfile > docker image >  push image to docker hub > pull docker image into helm chart  
-
-Create index.html file 
-
+- The flow ( dockerfile > docker image >  push image to docker hub > pull docker image into helm chart )
+- Create index.html file 
+```
 <!doctype html>
 <html lang="en">
 <head>
@@ -136,37 +115,23 @@ Create index.html file
   <h2>Ready expose to your content to the world</h2>
 </body>
 </html>
-
-Create dockerfile 
+```
 
 $ cat dockerfile
+```
 FROM nginx
 COPY index.html /usr/share/nginx/html
-
-Docker login 
-
-# docker build -t nginx-app .
-
-$ docker tag <image-name> <account-name>/<repo-name>:<tag-name>
-
-$ docker tag python-app arunsre/helm:t-nginx-app
- 
-$ docker push <account-name>/<repo-name>:<tag-name>
-
-$ docker push arunsre/helm:t-nginx-app	
-
-Verify the image in hub.docker.com
-
-Create own helm chart 
-
-helm create Nike-app
-
-Customize chart values to pull our image from hub.docker.com 
-
-Disable the appversion from Chart.yaml 
-
-Edit the values.yaml 
-
+```
+- Docker login 
+- $ docker build -t nginx-app .
+- $ docker tag python-app arunsre/helm:t-nginx-app
+- $ docker push arunsre/helm:t-nginx-app	
+- Verify the image in hub.docker.com
+- helm create Nike-app
+- Customize chart values to pull our image from hub.docker.com 
+- Disable the appversion from Chart.yaml 
+- Edit the values.yaml 
+```
 image:
   repository: arunsre/helm
   pullPolicy: IfNotPresent
@@ -185,51 +150,36 @@ image:
 service:
   type: NodePort
   port: 80
+```
+- helm install nike-rev-1 nike-app 
+- $ kubectl get all 
+- $ kubectl logs <pod-name> 
+- $ minikube service service-name --url
+- $ curl url
 
-helm install nike-rev-1 nike-app 
+## Part 8  Helm lint  
 
-Verify k8s objects 
-
-kubectl get all 
-
-kubectl logs <pod-name> 
-
-minikube service <service-name> --url 
-
-==================================================
-
-Part 8  helm lint  
-
-=========================================
-
-# helm lint <chart-name>
-# helm lint helloworld
-
+- helm lint <chart-name>
+- helm lint helloworld
 	space
-	remove a variable 
-	#
-		
-	
-===================
-part 9 helm value update 
-=================================
+	remove a variable 		
+
+# part 9 helm value update 
 
 helm upgrade r1 helloworld/ --set replicaCount=2
 
-=================================================================================
-part 10 helmfile  
-=================================================================================
+# part 10 helmfile  
 
-Download helmfile_linux_amd64 from https://github.com/roboll/helmfile/releases
+- Install helmfile
+- Download helmfile_linux_amd64 from https://github.com/roboll/helmfile/releases
+- $ wget helmfile_linux_amd64
+- $ mv helmfile_linux_amd64 helmfile             
+- $ mv helmfile /usr/local/bin/
+- $ chmod 777 /usr/local/bin/helmfile 
+- $ helmfile -version
+- $ helmfile-bank.yaml
 
-https://github.com/roboll/helmfile/releases
-$ wget helmfile_linux_amd64
-$ mv helmfile_linux_amd64 helmfile             
-$ mv helmfile /usr/local/bin/
-$ chmod 777 /usr/local/bin/helmfile 
-$ helmfile -version
-$ helmfile-bank.yaml
-
+```
 repositories:
 - name: prometheus
   url: https://prometheus-community.github.io/helm-charts
@@ -237,15 +187,9 @@ releases:
 - name: helloworld
   chart: ./helloworld
   installed: true
+```
 
 $ helmfile --file helmfile-bank.yaml sync
 $ helmfile --file helmfile-bank.yaml destroy
 
-repositories:
-- name: prometheus
-  url: https://prometheus-community.github.io/helm-charts
-releases:
-- name: helloworld
-  chart: ./helloworld
-  installed: true
 
