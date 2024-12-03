@@ -39,3 +39,26 @@ EKS
 aws eks update-kubeconfig --region us-east-1 --name c1 
 AWS_SDK_LOAD_CONFIG=1
 
+Kubernetes best practices:
+
+What are the best practices for deploying applications in Kubernetes?
+
+Using declarative deployment methods, such as Deployments or Helm charts
+Separating concerns between services by deploying them in separate namespaces
+Using liveness and readiness probes to ensure the health of the application
+
+What are the best practices for Kubernetes cluster security?
+
+Implementing Role-Based Access Control (RBAC)
+Using network policies to control traffic within the cluster
+Restricting external access to cluster components and API servers
+
+What are the best practices for Kubernetes performance optimization?
+
+Setting resource limits and requests to ensure adequate resources for the application
+Using horizontal and vertical pod autoscaling
+Optimizing container images for size and performance
+
+
+
+
