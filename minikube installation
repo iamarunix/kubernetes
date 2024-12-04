@@ -35,3 +35,29 @@ kubectl get nodes
 kubectl get all 
 kubectl get all -A 
 
+#!/bin/bash
+
+a=a_cert
+i=i_cert
+r=r_cert
+
+# Check if file a exists
+if [ -s "$a" ]; then
+    echo "File $a exists."
+    
+    if [ -s "$i" ]; then
+        echo "File $i exists."
+    else
+        echo "File $i does not exist."
+    fi
+
+    if [ -s "$r" ]; then
+        echo "File $r exists."
+    else
+        echo "File $r does not exist."
+    fi
+else
+    echo "Actual Certificate is missing. Please check and add the required Certificate"
+fi
+
+
