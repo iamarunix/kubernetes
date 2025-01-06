@@ -1,3 +1,4 @@
+
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 k get ns
@@ -5,12 +6,11 @@ k get pods -n argocd
 k edit svc argocd-server -n argocd
 minikube service list -n argocd
 
-
-## Part 4 - helm public chart
+# Part 4 - helm public chart
 $ helm install my-release oci://registry-1.docker.io/bitnamicharts/argo-cd
 $ helm pull argo-cd my-release oci://registry-1.docker.io/bitnamicharts/argo-cd
 
-## Part 5 - Create own py project  helm chart 
+# Part 5 - Create own py project  helm chart 
 python3 --version
 
 $ cat script.py
@@ -28,10 +28,10 @@ WORKDIR /app
 COPY . /app
 CMD ["python3", "script.py"]
 
-Build Docker image
+# Build Docker image
 docker build -t python-app .
 
-Run Docker image
+# Run Docker image
 docker run -p 9001:9001 python-app
 
 docker tag <image-name> <account-name>/<repo-name>:<tag-name>
@@ -43,3 +43,10 @@ docker push <account-name>/<repo-name>:<tag-name>
 docker push arunsre/helm:t-python-app	
 
 k svc svc-name --url 
+
+principles of Gitops
+
+Declarative
+Versioned and immuntable
+Pulled Automatically 
+Continously Reconcilation
