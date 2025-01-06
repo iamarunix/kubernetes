@@ -50,3 +50,19 @@ Declarative
 Versioned and immuntable
 Pulled Automatically 
 Continously Reconcilation
+
+GITOPS Tools:
+============
+
+argocd
+fluxcd
+jenkinsx
+spinnaker
+
+Argocd Architecture Components:
+
+Reposerver
+Application controller 
+API server
+Dex
+Redis 
