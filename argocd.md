@@ -1,6 +1,6 @@
 
 kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  k get 
 k get ns
 k get pods -n argocd 
 k edit svc argocd-server -n argocd
@@ -66,3 +66,18 @@ Application controller
 API server
 Dex
 Redis 
+
+~ $ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.26.0-rc.1/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
+~ $ sudo mv /tmp/eksctl /usr/local/bin
+~ $ export PATH=$PATH:/usr/local/bin/
+~ $ eksctl version
+0.26.0-rc.1
+
+# eksctl get clusters
+NAME                    REGION
+serious-indie-sheepdog  us-east-1
+
+aws eks --region us-east-1 update-kubeconfig --name serious-indie-sheepdog 
+
+   33  k port-forward argocd-server-5c768cdd96-9jdgf 8080:80 -n argocd
+   34  k port-forward argocd-server-5c768cdd96-9jdgf 8080:8080 -n argocd
