@@ -1,4 +1,4 @@
-Minikube installation in AWS EC2 (t2.medium, chargeable)
+Minikube installation in AWS EC2 (t2.medium, chargeable, storage 20GB)
 
 # Update Yum
 sudo yum update -y
@@ -12,7 +12,7 @@ sudo service docker start
 sudo service enable docker 
 sudo usermod -a -G docker ec2-user
 sudo chmod 666 /var/run/docker.sock 
-sudo service status docker 
+sudo service docker status
 
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl 
