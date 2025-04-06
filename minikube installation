@@ -35,6 +35,9 @@ kubectl get nodes
 kubectl get all 
 kubectl get all -A 
 kubectl get namespaces
+kubectl config view
+kubectl config view | grep namespace
+kubectl config set-context --current --namespace=my-namespace
 
 
 
