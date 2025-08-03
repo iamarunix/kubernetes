@@ -1,83 +1,34 @@
+1 Introduction to ArgoCD
+  ArgoCD UI
 
-kubectl create namespace argocd
-  k get 
-k get ns
-k get pods -n argocd 
-k edit svc argocd-server -n argocd
-minikube service list -n argocd
+2 Problem Statement syncup, memory, configmap 
+  Solution 
 
-# Part 4 - helm public chart
-$ helm install my-release oci://registry-1.docker.io/bitnamicharts/argo-cd
-$ helm pull argo-cd my-release oci://registry-1.docker.io/bitnamicharts/argo-cd
+3 Gitops principles
 
-# Part 5 - Create own py project  helm chart 
-python3 --version
+4 ArgoCD Architecture
+  Repository Server
+  Application Controller
+  API Server
+  Redis
+  Dex 
+  
+  5 Lab Setup: Installation of ArgoCD (yaml manifest, operator, helm )
+  Prerequisites: AWS (EC2.t2.medium) Instance, KIND, Docker, kubectl, Argocd 
+  Exposing the ArgoCD UI
 
-$ cat script.py
-import time
-print("Py app started ...")
-time.sleep(60)
-print("Py app terminated")
+6 ArgoCD Applications
+  Deployment of applications in UI(Application YAML)
+  Deployment of applications in CLI (Application YAML)
+  Deployment of applications in UI (Application HELM CHART)
+  Deployment of applications in CLI (Application HELM CHART)
+  
+7 Managing application lifecycle: Create, Sync, Delete 
+  Sync strategies: Manual, Automatic, Prune, Self healing 
+  
+8 Managing Multiple Environments
+  Using Git branches for different environments (Dev, Staging, Production)
 
-python3 script.py   
+9 Multi-cluster support in ArgoCD
 
-cat dockerfile                        
-
-FROM python:3.8
-WORKDIR /app
-COPY . /app
-CMD ["python3", "script.py"]
-
-# Build Docker image
-docker build -t python-app .
-
-# Run Docker image
-docker run -p 9001:9001 python-app
-
-docker tag <image-name> <account-name>/<repo-name>:<tag-name>
-docker tag python-app arunsre/helm:t-python-app
-
-docker login 
-
-docker push <account-name>/<repo-name>:<tag-name>
-docker push arunsre/helm:t-python-app	
-
-k svc svc-name --url 
-
-principles of Gitops
-
-Declarative
-Versioned and immuntable
-Pulled Automatically 
-Continously Reconcilation
-
-GITOPS Tools:
-============
-
-argocd
-fluxcd
-jenkinsx
-spinnaker
-
-Argocd Architecture Components:
-
-Reposerver
-Application controller 
-API server
-Dex
-Redis 
-
-~ $ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/0.26.0-rc.1/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
-~ $ sudo mv /tmp/eksctl /usr/local/bin
-~ $ export PATH=$PATH:/usr/local/bin/
-~ $ eksctl version
-0.26.0-rc.1
-
-# eksctl get clusters
-NAME                    REGION
-serious-indie-sheepdog  us-east-1
-
-aws eks --region us-east-1 update-kubeconfig --name serious-indie-sheepdog 
-
-   33  k port-forward argocd-server-5c768cdd96-9jdgf 8080:80 -n argocd
-   34  k port-forward argocd-server-5c768cdd96-9jdgf 8080:8080 -n argocd
+10 ArgoCD CLI commands walkthrough - Troubleshooting  
