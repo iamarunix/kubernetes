@@ -1,34 +1,40 @@
-1 Introduction to ArgoCD
-  ArgoCD UI
+# ArgoCD Series
 
-2 Problem Statement syncup, memory, configmap 
-  Solution 
+https://www.youtube.com/watch?v=bUV1ygQ7SDk
 
-3 Gitops principles
+## Introduction to ArgoCD
+  - ArgoCD UI
 
-4 ArgoCD Architecture
-  Repository Server
-  Application Controller
-  API Server
-  Redis
-  Dex 
+## Why ArgoCD ? 
+ - Problem Statement
+ - Solution 
+
+## Gitops principles
+
+## ArgoCD Architecture
+  - Repository Server
+  - Application Controller
+  - API Server
+  - Redis
+  - Dex 
   
-  5 Lab Setup: Installation of ArgoCD (yaml manifest, operator, helm )
-  Prerequisites: AWS (EC2.t2.medium) Instance, KIND, Docker, kubectl, Argocd 
-  Exposing the ArgoCD UI
+## Lab Setup: 
+  - Installation of ArgoCD (yaml manifest, operator, helm )
+  - Prerequisites: AWS (EC2.t2.medium) Instance, KIND, Docker, kubectl, Argocd 
+  - Exposing the ArgoCD UI
 
-6 ArgoCD Applications
-  Deployment of applications in UI(Application YAML)
-  Deployment of applications in CLI (Application YAML)
-  Deployment of applications in UI (Application HELM CHART)
-  Deployment of applications in CLI (Application HELM CHART)
+## ArgoCD Applications
+  - Deployment of applications in UI(Application YAML)
+  - Deployment of applications in CLI (Application YAML)
+  - Deployment of applications in UI (Application HELM CHART)
+  - Deployment of applications in CLI (Application HELM CHART)
   
-7 Managing application lifecycle: Create, Sync, Delete 
-  Sync strategies: Manual, Automatic, Prune, Self healing 
+## Managing application lifecycle: Create, Sync, Delete 
+  - Sync strategies: Manual, Automatic, Prune, Self healing 
   
-8 Managing Multiple Environments
-  Using Git branches for different environments (Dev, Staging, Production)
+## Managing Multiple Environments
+  - Using Git branches for different environments (Dev, Staging, Production)
 
-9 Multi-cluster support in ArgoCD
+## Multi-cluster support in ArgoCD
 
-10 ArgoCD CLI commands walkthrough - Troubleshooting  
+## ArgoCD CLI commands walkthrough - Troubleshooting  
