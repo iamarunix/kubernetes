@@ -22,6 +22,7 @@ https://www.youtube.com/watch?v=bUV1ygQ7SDk
   - Installation of ArgoCD (yaml manifest, operator, helm )
   - Prerequisites: AWS (EC2.t2.medium) Instance, KIND, Docker, kubectl, Argocd 
   - Exposing the ArgoCD UI
+  - https://github.com/iamarunix/kubernetes/blob/main/ArgoCD%20LabSetup
 
 ## ArgoCD Applications
   - Deployment of applications in UI(Application YAML)
